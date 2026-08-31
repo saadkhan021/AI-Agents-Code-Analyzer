@@ -1,7 +1,7 @@
 # AI Code Review Pipeline
 
 A sequential multi-agent pipeline that scans, refactors, and documents raw code —
-built with **LangGraph**, **LangChain**, **Google Gemini (1.5 Flash)**, and **Streamlit**.
+built with **LangGraph**, **LangChain**, **Google Gemini (2.5 Flash)**, and **Streamlit**.
 
 ```
 Scanner Agent  ──▶  Refactor Agent  ──▶  Docs Agent
@@ -30,7 +30,7 @@ every step auditable and cheap.
 
 ## Token optimization
 
-- Uses `gemini-1.5-flash`, the cheapest capable Gemini tier.
+- Uses `gemini-2.5-flash`, the cheapest capable Gemini tier.
 - Each agent receives **only the state it needs** (e.g. Docs Agent never sees the raw audit
   JSON, only the final code + a short change summary) — no growing conversation history is
   replayed on every call.
